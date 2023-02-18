@@ -1,0 +1,17 @@
+[Unit]
+Description=ChatGPT telegram bot
+After=syslog.target
+
+[Service]
+Type=simple
+User=username
+Group=username
+
+Environment="TELEGRAM_API_TOKEN="
+Environment="OPENAI_API_KEY="
+
+WorkingDirectory=/home/username/ChatGPT-bot
+ExecStart=/usr/bin/python3 main.py
+
+[Install]
+WantedBy=multi-user.target
